@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Especificidade CSS</title>
+    <style>
+        /* https://specificity.keegan.st/ */
+
+        /*        
+            1. Inline
+            2. ID
+            3. Classe, Pseudo-Classes (:), Atributo 
+            4. Elemento, Pseudo-Elementos (::)
+        */
+
+        body { font-size: 40px; }
+
+        div {
+            background-color: #00b;
+            color: #fff;
+        }
+
+        /* se inverter a ordem div[attr] e div:hover, como tem a mesma especificidade, 
+        o hover nao é aplicado pois o que vale no empate é o último a ser processado */
+        div[wm-cor] { background-color: darkorange;}
+        div:hover { background-color: purple;}
+        /* fim */
+
+        div.estilo { background-color: green;} /* hover nao aplicado pela regra de empate*/
+
+        #unico1, #unico2 { background-color: black;} /* hover nao aplicado, ID é mais específico */
+        
+        div:hover, #unico1:hover { background-color: purple;} /*se houver inline aplicado na tag o hover não é aplicado*/
+
+    </style>
+</head>
+
+<body>
+    <div id="unico1" class="estilo" style="background-color: red;">
+        #unico1 vs .estilo vs inline
+    </div>
+    <div id="unico2" class="estilo">#unico2 vs .estilo</div>
+    <div class="estilo" wm-cor>.estilo vs wm-cor</div>
+    <div wm-cor>wm-cor</div>
+    <div class="estilo">.estilo</div>
+    <div>elemento</div>
+</body>
+
+</html>
