@@ -16,6 +16,48 @@
             flex-direction: column;
             align-items: center;
         }
+
+        div {
+            font-size: 8px;
+        }
+
+        p {
+            font-size: 3em;
+
+            font-family: 'Indie Flowerr', cursive;
+            font-weight: 100;
+            font-style: italic;
+            text-transform: uppercase;
+            text-decoration: underline;
+            word-spacing: 10px;
+            letter-spacing: 20px;
+            line-height: 2.5em;
+            text-align: center;
+        }
+
+        .botao {
+            font-size: 28px;
+            text-decoration: none;
+            padding: 10px 30px;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+
+        .destaque {
+            background-color: tomato;
+            color: #fff;
+            box-shadow: 2px 2px 1px 1px #000;
+        }
+
+        
+        .destaque:hover {
+            background-color: rgb(252, 112, 87);
+            box-shadow: 2px 2px 1px 1px rgb(85, 84, 84);
+        }
+
+        .destaque:active {
+            box-shadow: none;
+        }
     </style>
 </head>
 
@@ -26,7 +68,7 @@
             <br>legal!!!
         </p>
     </div>
-    <a href="http://google.com" class="botao destaque">Google</a>
+    <a class="botao destaque">Google</a>
 </body>
 
 </html>
